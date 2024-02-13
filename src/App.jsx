@@ -13,16 +13,37 @@ import { useState } from 'react';
 
 function App() {
 
-  const [selectedCountry, setSelectedCountry] = useState('');
+  const [getSelectedCountry, setCountry] = useState('');
+  const [allStates, setStates] = useState('');
+  const [allDistricts, setDistricts] = useState('');
+  
 
-  const handleCountryChange = (event) => {
-    setSelectedCountry(event.target.value);
+  const getCountry = (event) => {
+    setCountry(event.target.value);
     getStatesOfTheCountry(event.target.value);
   }
 
   const getStatesOfTheCountry = (country) =>{
-    console.table('Indian States ==>', india);
+    let states;
+    if(country == 'india'){
+       states = Object.keys(india);
+    }else{
+      states = Object.keys(bhutan);
+    }
+    setStates(states);
   }
+
+  const getSelectedState = (event) => {
+    console.log('Selected State ==>', event.target.value);
+    setDistricts(event.target.value);
+    getDistrictsOfStates(event.target.value);
+  }
+
+  const getDistrictsOfStates = (district) =>{
+    
+  }
+
+  // console.log('State => ',selectedDistricts);
 
   return (
     <div className='main-block'>
@@ -66,24 +87,53 @@ function App() {
             </div>
           
             <div className='col-lg-4 col-md-6 col-sm-6'>
-              <select value={selectedCountry} name='country' className='form-control' onChange={handleCountryChange}>
+              <select value={getSelectedCountry} name='country' className='form-control' onChange={getCountry}>
                 <option value='' disabled selected hidden>Select Country</option>
                 <option value='india'>India</option>
                 <option value='bhutan'>Bhutan</option>
               </select>
             </div>
-            <div className='col-lg-4 col-md-6 col-sm-6'>
-              <select name='state' className='form-control'>
-                <option value='' disabled selected hidden>Select State</option>
-                <option value='Super Pro'>India</option>
-              </select>
-            </div>
-            <div className='col-lg-4 col-md-6 col-sm-6'>
-              <select name='district' className='form-control'>
-                <option value='' disabled selected hidden>Select District</option>
-                <option value='Super Pro'>India</option>
-              </select>
-            </div>
+            {
+              getSelectedCountry == 'bhutan' ? 
+              <div className='col-lg-8 col-md-6 col-sm-6'>
+                <select name='district' className='form-control'>
+                  <option value='' disabled selected hidden>Select District</option>
+                  <option value='Super Pro'>India</option>
+                </select>
+              </div> :
+
+              <>
+
+                <div className='col-lg-4 col-md-6 col-sm-6'>
+                  <select name='state'value={allDistricts}  className='form-control' onChange={getSelectedState}>
+                    <option value='' disabled selected hidden>Select State</option>
+                    {
+                      allStates.length > 0 ?
+                      allStates.map( (item, index) => (
+                          <option value={item} key={index}>{item}</option>
+                      )) : 
+                      <option value=''>No States Selected</option>
+                    }
+                  </select>
+                </div>
+                <div className='col-lg-4 col-md-6 col-sm-6'>
+                  <select name='district' className='form-control'>
+
+                    <option value='' disabled selected hidden>Select District</option>
+                    {
+                      allDistricts.length > 0 ?
+                      allDistricts.map( (item, index) => (
+                        <option value={item}>{item}</option>
+                      ) ) : 
+                      <option value=''>No Districts Selected</option>
+                    }
+                  </select>
+                </div>
+              </>
+              
+            }
+            
+            
           </div>
           <div className='row'>
             <div className='col-md-6'>
