@@ -21,16 +21,20 @@ function App() {
   const getCountry = (event) => {
     setCountry(event.target.value);
     getStatesOfTheCountry(event.target.value);
+    
   }
 
   const getStatesOfTheCountry = (country) =>{
     let states;
     if(country == 'india'){
        states = Object.keys(india);
+       setAllDistricts([]);
     }else{
       states = Object.keys(bhutan);
+      setAllDistricts(bhutan['Bhutan']);
     }
     setStates(states);
+    
   }
 
   const getSelectedState = (event) => {
@@ -43,10 +47,6 @@ function App() {
       setAllDistricts(districts);
     }
     getDistrictsOfStates(event.target.value);
-  }
-
-  const getDistrictsOfStates = (district) =>{
-  
   }
 
   return (
