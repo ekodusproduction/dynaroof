@@ -15,7 +15,7 @@ function App() {
 
   const [getSelectedCountry, setCountry] = useState('');
   const [allStates, setStates] = useState('');
-  const [allDistricts, setDistricts] = useState('');
+  const [allDistricts, setAllDistricts] = useState('');
   
 
   const getCountry = (event) => {
@@ -34,16 +34,20 @@ function App() {
   }
 
   const getSelectedState = (event) => {
-    console.log('Selected State ==>', event.target.value);
-    setDistricts(event.target.value);
+    let districts;
+    if(getSelectedCountry == 'bhutan'){
+      districts = bhutan['Bhutan'];
+      setAllDistricts(districts);
+    }else{
+      districts = india[event.target.value];
+      setAllDistricts(districts);
+    }
     getDistrictsOfStates(event.target.value);
   }
 
   const getDistrictsOfStates = (district) =>{
-    
+  
   }
-
-  // console.log('State => ',selectedDistricts);
 
   return (
     <div className='main-block'>
@@ -98,14 +102,20 @@ function App() {
               <div className='col-lg-8 col-md-6 col-sm-6'>
                 <select name='district' className='form-control'>
                   <option value='' disabled selected hidden>Select District</option>
-                  <option value='Super Pro'>India</option>
+                  {
+                    allDistricts.length > 0 ?
+                    allDistricts.map( (item, index) => (
+                      <option value={item} key={index}>{item}</option>
+                    ) ) : 
+                    <option value=''>No Districts Selected</option>
+                  }
                 </select>
               </div> :
 
               <>
 
                 <div className='col-lg-4 col-md-6 col-sm-6'>
-                  <select name='state'value={allDistricts}  className='form-control' onChange={getSelectedState}>
+                  <select name='state' className='form-control' onChange={getSelectedState}>
                     <option value='' disabled selected hidden>Select State</option>
                     {
                       allStates.length > 0 ?
@@ -117,13 +127,13 @@ function App() {
                   </select>
                 </div>
                 <div className='col-lg-4 col-md-6 col-sm-6'>
-                  <select name='district' className='form-control'>
+                  <select name='district' className='form-control' onChange={getDistrictsOfStates}>
 
                     <option value='' disabled selected hidden>Select District</option>
                     {
                       allDistricts.length > 0 ?
                       allDistricts.map( (item, index) => (
-                        <option value={item}>{item}</option>
+                        <option value={item} key={index}>{item}</option>
                       ) ) : 
                       <option value=''>No Districts Selected</option>
                     }
