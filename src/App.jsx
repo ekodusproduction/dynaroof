@@ -49,6 +49,10 @@ function App() {
     getDistrictsOfStates(event.target.value);
   }
 
+  const getDistrictsOfStates = (district) =>{
+  
+  }
+
   return (
     <div className='main-block'>
       <div className='side-banner-div'>
