@@ -11,6 +11,7 @@ import {india} from './assets/india';
 import {bhutan} from './assets/bhutan';
 import { useState } from 'react';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 function App() {
 
@@ -78,10 +79,26 @@ function App() {
           'Content-Type': 'multipart/form-data'
         }
       });
-      
-      console.log('Response:', response);
+
+      if(response.data.status == 200){
+        Swal.fire({
+            title: 'Thank you for applying for your warranty card',
+            text: 'You will receive an SMS on your phone number regarding further process. ',
+            icon: 'success',
+        });
+      }else{
+        Swal.fire({
+          title: 'Oops! Something went wrong',
+          text: response.data.message,
+          icon: 'error',
+        });
+      }
     } catch (error) {
-      console.error('Error:', error);
+      Swal.fire({
+        title: 'Oops! Something went wrong',
+        text: error,
+        icon: 'error',
+      });
     }
   }
 
