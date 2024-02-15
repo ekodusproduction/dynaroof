@@ -10,6 +10,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import {india} from './assets/india';
 import {bhutan} from './assets/bhutan';
 import { useState } from 'react';
+import axios from 'axios';
 
 function App() {
 
@@ -52,6 +53,37 @@ function App() {
   const getDistrictsOfStates = (district) =>{
   
   }
+  const submitRegistrationForm = async (event) =>{
+    event.preventDefault();
+
+    let formData = new FormData();
+    formData.append('fullName', event.target.fullName.value);
+    formData.append('email', event.target.email.value);
+    formData.append('phone', event.target.phoneNumber.value);
+    formData.append('dealerName', event.target.dealerName.value);
+    formData.append('materialType', event.target.materialType.value);
+    formData.append('dateOfPurchase', event.target.dateOfPurchase.value);
+    formData.append('country', event.target.country.value);
+    formData.append('district', event.target.district.value);
+    formData.append('state', event.target.state.value);
+    formData.append('colorOfSheets', event.target.colorOfSheets.value);
+    formData.append('numberOfSheets', event.target.numberOfSheets.value);
+    formData.append('serialNumber', event.target.serialNumber.value);
+    formData.append('thicknessOfSheets', event.target.thicknessOfSheets.value);
+    formData.append('invoice', event.target.invoice.files[0]);
+
+    try {
+      const response = await axios.post('http://127.0.0.1:8000/api/customer-registration', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+      
+      console.log('Response:', response);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
 
   return (
     <div className='main-block'>
@@ -74,24 +106,24 @@ function App() {
       </div>
       <div className='warranty-form-div'>
         <h4>Customer Warranty Registration Form</h4>
-        <form>
-          <input type='text' name='full-name' className='form-control' placeholder='Full Name' />
+        <form id="registrationForm" onSubmit={submitRegistrationForm}>
+          <input type='text' name='fullName' className='form-control' placeholder='Full Name' />
           <input type='email' name='email' className='form-control' placeholder='Email Address' />
-          <input type='text' name='phone-number' className='form-control' placeholder='Phone Number' />
+          <input type='text' name='phoneNumber' className='form-control' placeholder='Phone Number' />
           
           <div className='row'>
             <div className='col-lg-4 col-md-6 col-sm-6'>
-              <input type='text' className='form-control' name='dealer-name' placeholder='Dealer Name' />
+              <input type='text' className='form-control' name='dealerName' placeholder='Dealer Name' />
             </div>
             <div className='col-lg-4 col-md-6 col-sm-6'>
-              <select name='material-type' className='form-control'>
+              <select name='materialType' className='form-control'>
                 <option value='' disabled selected hidden>Select Material Type</option>
-                <option value='Super Pro'>Super Pro (20 Years)</option>
-                <option value='Pro'>Pro (10 Years)</option>
+                <option value='Super Pro (20 Years)'>Super Pro (20 Years)</option>
+                <option value='Pro (10 Years)'>Pro (10 Years)</option>
               </select>
             </div>
             <div className='col-lg-4 col-md-6 col-sm-6'>
-              <input type='date' className='form-control' placeholder='Date of Purchase :' />
+              <input type='date' className='form-control'name="dateOfPurchase"  placeholder='Date of Purchase :' />
             </div>
           
             <div className='col-lg-4 col-md-6 col-sm-6'>
@@ -151,21 +183,21 @@ function App() {
           </div>
           <div className='row'>
             <div className='col-md-6'>
-              <input type='text' className='form-control' name='color-of-sheets' placeholder='Color of Sheets' /> 
+              <input type='text' className='form-control' name='colorOfSheets' placeholder='Color of Sheets' /> 
             </div>
             <div className='col-md-6'>
-              <input type='number' className='form-control' name='number-of-sheets' placeholder='Number of Sheets' min={0}/>
+              <input type='number' className='form-control' name='numberOfSheets' placeholder='Number of Sheets' min={0}/>
             </div>
           </div>
           <div className='row'>
             <div className='col-md-6'>
               <div className="input-group">
-                <input type='text' className='form-control' name='serial-number' placeholder='Serial Number' />
+                <input type='text' className='form-control' name='serialNumber' placeholder='Serial Number' />
                 <span className="input-group-text"><IoMdInformationCircle /></span>
               </div>
             </div>
             <div className='col-md-6'>
-              <input type='number' className='form-control' name='thickness-of-sheets' placeholder='Thickness of Sheets (mm)' min={0}/>
+              <input type='number' className='form-control' name='thicknessOfSheets' placeholder='Thickness of Sheets (mm)' min={0}/>
             </div>
           </div>
           <div className='upload-div'>
@@ -180,9 +212,8 @@ function App() {
             <p>I accept <a href='#'>Terms & Conditions</a></p>
           </div>
           <div className='submit-button'>
-            <input type='button' className='btn btn-md btn-success' name='Submit' value='Submit'/>
+            <input type='submit' className='btn btn-md btn-success' name='Submit' value='Submit' />
           </div>
-          
         </form>
       </div>
     </div>
