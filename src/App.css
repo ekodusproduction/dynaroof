@@ -200,3 +200,20 @@ input[type="date"]:valid:before {
       height: 450px;
   }
 }
+
+.otp-model{
+  position: absolute;
+  top:50%;
+  left:50%;
+  right:10px;
+  transform: translate(-50%,-50%);
+}
+
+.otp-model .card{
+  border-radius:0px;
+  /* background:rgb(212, 212, 212); */
+}
+
+.otp-model .card .form-control{
+  border-radius:0px;
+}

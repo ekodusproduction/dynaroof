@@ -18,6 +18,7 @@ function App() {
   const [getSelectedCountry, setCountry] = useState('');
   const [allStates, setStates] = useState('');
   const [allDistricts, setAllDistricts] = useState('');
+  const [getPhone, setPhone] = useState('');
   
 
   const getCountry = (event) => {
@@ -72,6 +73,7 @@ function App() {
     formData.append('serialNumber', event.target.serialNumber.value);
     formData.append('thicknessOfSheets', event.target.thicknessOfSheets.value);
     formData.append('invoice', event.target.invoice.files[0]);
+    setPhone(event.target.phoneNumber.value);
 
     try {
       const response = await axios.post('http://127.0.0.1:8000/api/customer-registration', formData, {
@@ -80,12 +82,11 @@ function App() {
         }
       });
 
-      if(response.data.status == 200){
-        Swal.fire({
-            title: 'Thank you for applying for your warranty card',
-            text: 'You will receive an SMS on your phone number regarding further process. ',
-            icon: 'success',
-        });
+      if(response.data.status == 200 || response.data.type == 'success'){
+
+       
+
+        
       }else{
         Swal.fire({
           title: 'Oops! Something went wrong',
@@ -103,7 +104,8 @@ function App() {
   }
 
   return (
-    <div className='main-block'>
+    <>
+      <div className='main-block'>
       <div className='side-banner-div'>
         <div className='side-banner-floating-header'>
           <img src='/assets/dynaroof-logo.png' alt='dynaroof-logo' />
@@ -233,7 +235,31 @@ function App() {
           </div>
         </form>
       </div>
-    </div>
+      </div>
+
+      <div className='otp-model'>
+        <div className="card">
+          <div className='card-body'>
+            <div className="card-title text-center">
+              <p>Verify Your Phone Number</p>
+            </div>
+            <form id="registrationForm">
+              <div className="form-group mb-4">
+                <input type='hidden' name='phone' className='form-control' placeholder='Email Address' value={getPhone} />
+              </div>
+              <div className="form-group mb-4">
+                <input type='number' name='otp' className='form-control' placeholder='Enter OTP' />
+              </div>
+              <div className='submit-button'>
+                <input type='submit' className='btn btn-md btn-success' name='Submit' value='Submit' />
+              </div>
+            </form> 
+          </div>
+        </div>
+            
+      </div>
+    </>
+    
   )
 }
 
