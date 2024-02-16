@@ -70,6 +70,10 @@
   background: -webkit-linear-gradient(180deg, rgba(31,30,30,0.15449929971988796) 26%, rgba(33,33,33,0.23012955182072825) 59%, rgba(21,22,22,0.2329306722689075) 84%);
   background: linear-gradient(180deg, rgba(31,30,30,0.15449929971988796) 26%, rgba(33,33,33,0.23012955182072825) 59%, rgba(21,22,22,0.2329306722689075) 84%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1f1e1e",endColorstr="#151616",GradientType=1);
+  position: absolute;
+  height: 159px;
+  background: #00000021;
+  background-blend-mode: soft-light;
 }
 
 .side-banner-div .side-banner-bottom-text p{

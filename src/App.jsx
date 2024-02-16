@@ -236,84 +236,56 @@ function App() {
   return (
     <>
       <div className='main-block'>
-      <div className='side-banner-div'>
-        <div className='side-banner-floating-header'>
-          <img src='/assets/dynaroof-logo.png' alt='dynaroof-logo' />
-          <ul>
-            <li><FaFacebook /></li>
-            <li><RiInstagramFill/></li>
-            <li><FaLinkedin /></li>
-            <li><IoLogoYoutube/></li>
-          </ul>
+        <div className='side-banner-div'>
+          <div className='side-banner-floating-header'>
+            <img src='/assets/dynaroof-logo.png' alt='dynaroof-logo' />
+            <ul>
+              <li><FaFacebook /></li>
+              <li><RiInstagramFill/></li>
+              <li><FaLinkedin /></li>
+              <li><IoLogoYoutube/></li>
+            </ul>
+          </div>
+          <div className='side-banner-bottom-text'>
+            <p><sup><FaQuoteLeft style={{fontSize:'12px'}}/></sup>  BUILD YOUR DREAM PROPERTY</p>
+            <h3>WITH NEW EXPERIENCE <sup><FaQuoteRight style={{fontSize:'12px'}}/></sup>  </h3>
+            <p className='mt-4' style={{fontSize:'15px', fontWeight:400}}><a href='https://dynaroof.com/' target="_blank" style={{textDecoration:'none', color:'white', textShadow: '0px 5px 10px #d7d6d6'}}>Explore Dynaroof <FaLongArrowAltRight style={{marginLeft:'10px', fontSize:'15px'}} /></a></p>
+          </div>
+          <img src='/assets/side-banner.jpg' className='side-banner-image' alt='side-banner' />
         </div>
-        <div className='side-banner-bottom-text'>
-          <p><sup><FaQuoteLeft style={{fontSize:'12px'}}/></sup>  BUILD YOUR DREAM PROPERTY</p>
-          <h3>WITH NEW EXPERIENCE <sup><FaQuoteRight style={{fontSize:'12px'}}/></sup>  </h3>
-          <p className='mt-4' style={{fontSize:'15px', fontWeight:400}}><a href='#' style={{textDecoration:'none', color:'white', textShadow: '5px 10px 20px #3b3b3b'}}>Explore Dynaroof <FaLongArrowAltRight style={{marginLeft:'10px', fontSize:'15px'}} /></a></p>
-        </div>
-        <img src='/assets/side-banner.jpg' className='side-banner-image' alt='side-banner' />
-      </div>
-      <div className='warranty-form-div'>
-        <h4>Customer Warranty Registration Form</h4>
-        <form id="registrationForm" onSubmit={submitRegistrationForm}>
-          <input type='text' name='fullName' className='form-control' placeholder='Full Name'  required/>
-          <input type='email' name='email' className='form-control' placeholder='Email Address'  required/>
-          <input type='text' name='phoneNumber' className='form-control' placeholder='Phone Number'  required/>
-          
-          <div className='row'>
-            <div className='col-lg-4 col-md-6 col-sm-6'>
-              <input type='text' className='form-control' name='dealerName' placeholder='Dealer Name'  required/>
-            </div>
-            <div className='col-lg-4 col-md-6 col-sm-6'>
-              <select name='materialType' className='form-control' required>
-                <option value='' disabled selected hidden>Select Material Type</option>
-                <option value='Super Pro (20 Years)'>Super Pro (20 Years)</option>
-                <option value='Pro (10 Years)'>Pro (10 Years)</option>
-              </select>
-            </div>
-            <div className='col-lg-4 col-md-6 col-sm-6'>
-              <input type='date' className='form-control'name="dateOfPurchase"  placeholder='Date of Purchase :'  required/>
-            </div>
-          
-            <div className='col-lg-4 col-md-6 col-sm-6'>
-              <select value={getSelectedCountry} name='country' className='form-control' onChange={getCountry} required>
-                <option value='' disabled selected hidden>Select Country</option>
-                <option value='india'>India</option>
-                <option value='bhutan'>Bhutan</option>
-              </select>
-            </div>
-            {
-              getSelectedCountry == 'bhutan' ? 
-              <div className='col-lg-8 col-md-6 col-sm-6'>
-                <select name='district' className='form-control' required>
-                  <option value='' disabled selected hidden>Select District</option>
-                  {
-                    allDistricts.length > 0 ?
-                    allDistricts.map( (item, index) => (
-                      <option value={item} key={index}>{item}</option>
-                    ) ) : 
-                    <option value=''>No Districts Selected</option>
-                  }
+        <div className='warranty-form-div'>
+          <h4>Customer Warranty Registration Form</h4>
+          <form id="registrationForm" onSubmit={submitRegistrationForm}>
+            <input type='text' name='fullName' className='form-control' placeholder='Full Name'  required/>
+            <input type='email' name='email' className='form-control' placeholder='Email Address'  required/>
+            <input type='text' name='phoneNumber' className='form-control' placeholder='Phone Number'  required/>
+            
+            <div className='row'>
+              <div className='col-lg-4 col-md-6 col-sm-6'>
+                <input type='text' className='form-control' name='dealerName' placeholder='Dealer Name'  required/>
+              </div>
+              <div className='col-lg-4 col-md-6 col-sm-6'>
+                <select name='materialType' className='form-control' required>
+                  <option value='' disabled selected hidden>Select Material Type</option>
+                  <option value='Super Pro (20 Years)'>Super Pro (20 Years)</option>
+                  <option value='Pro (10 Years)'>Pro (10 Years)</option>
                 </select>
-              </div> :
-
-              <>
-
-                <div className='col-lg-4 col-md-6 col-sm-6'>
-                  <select name='state' className='form-control' onChange={getSelectedState} required>
-                    <option value='' disabled selected hidden>Select State</option>
-                    {
-                      allStates.length > 0 ?
-                      allStates.map( (item, index) => (
-                          <option value={item} key={index}>{item}</option>
-                      )) : 
-                      <option value=''>No States Selected</option>
-                    }
-                  </select>
-                </div>
-                <div className='col-lg-4 col-md-6 col-sm-6'>
-                  <select name='district' className='form-control' onChange={getDistrictsOfStates} required>
-
+              </div>
+              <div className='col-lg-4 col-md-6 col-sm-6'>
+                <input type='date' className='form-control'name="dateOfPurchase"  placeholder='Date of Purchase :'  required/>
+              </div>
+            
+              <div className='col-lg-4 col-md-6 col-sm-6'>
+                <select value={getSelectedCountry} name='country' className='form-control' onChange={getCountry} required>
+                  <option value='' disabled selected hidden>Select Country</option>
+                  <option value='india'>India</option>
+                  <option value='bhutan'>Bhutan</option>
+                </select>
+              </div>
+              {
+                getSelectedCountry == 'bhutan' ? 
+                <div className='col-lg-8 col-md-6 col-sm-6'>
+                  <select name='district' className='form-control' required>
                     <option value='' disabled selected hidden>Select District</option>
                     {
                       allDistricts.length > 0 ?
@@ -323,48 +295,76 @@ function App() {
                       <option value=''>No Districts Selected</option>
                     }
                   </select>
-                </div>
-              </>
+                </div> :
+
+                <>
+
+                  <div className='col-lg-4 col-md-6 col-sm-6'>
+                    <select name='state' className='form-control' onChange={getSelectedState} required>
+                      <option value='' disabled selected hidden>Select State</option>
+                      {
+                        allStates.length > 0 ?
+                        allStates.map( (item, index) => (
+                            <option value={item} key={index}>{item}</option>
+                        )) : 
+                        <option value=''>No States Selected</option>
+                      }
+                    </select>
+                  </div>
+                  <div className='col-lg-4 col-md-6 col-sm-6'>
+                    <select name='district' className='form-control' onChange={getDistrictsOfStates} required>
+
+                      <option value='' disabled selected hidden>Select District</option>
+                      {
+                        allDistricts.length > 0 ?
+                        allDistricts.map( (item, index) => (
+                          <option value={item} key={index}>{item}</option>
+                        ) ) : 
+                        <option value=''>No Districts Selected</option>
+                      }
+                    </select>
+                  </div>
+                </>
+                
+              }
               
-            }
-            
-            
-          </div>
-          <div className='row'>
-            <div className='col-md-6'>
-              <input type='text' className='form-control' name='colorOfSheets' placeholder='Color of Sheets'  required/> 
+              
             </div>
-            <div className='col-md-6'>
-              <input type='number' className='form-control' name='numberOfSheets' placeholder='Number of Sheets' min={0} required/>
-            </div>
-          </div>
-          <div className='row'>
-            <div className='col-md-6'>
-              <div className="input-group">
-                <input type='text' className='form-control' name='serialNumber' placeholder='Serial Number'  required/>
-                <span className="input-group-text"><IoMdInformationCircle /></span>
+            <div className='row'>
+              <div className='col-md-6'>
+                <input type='text' className='form-control' name='colorOfSheets' placeholder='Color of Sheets'  required/> 
+              </div>
+              <div className='col-md-6'>
+                <input type='number' className='form-control' name='numberOfSheets' placeholder='Number of Sheets' min={0} required/>
               </div>
             </div>
-            <div className='col-md-6'>
-              <input type='number' className='form-control' name='thicknessOfSheets' placeholder='Thickness of Sheets (mm)' min={0} required/>
+            <div className='row'>
+              <div className='col-md-6'>
+                <div className="input-group">
+                  <input type='text' className='form-control' name='serialNumber' placeholder='Serial Number'  required/>
+                  <span className="input-group-text"><IoMdInformationCircle /></span>
+                </div>
+              </div>
+              <div className='col-md-6'>
+                <input type='number' className='form-control' name='thicknessOfSheets' placeholder='Thickness of Sheets (mm)' min={0} required/>
+              </div>
             </div>
-          </div>
-          <div className='upload-div'>
-            <div className='upload-div-header'>
-              <h6>Upload Invoice</h6>
-              <p>( Accepted file types: pdf, docx. Max file size: 2MB)</p>
+            <div className='upload-div'>
+              <div className='upload-div-header'>
+                <h6>Upload Invoice</h6>
+                <p>( Accepted file types: pdf, docx. Max file size: 2MB)</p>
+              </div>
+              <input type='file' name='invoice' className='form-control'  required/>
             </div>
-            <input type='file' name='invoice' className='form-control'  required/>
-          </div>
-          <div className='terms-condition'>
-            <input type='checkbox' name='terms-condition' id="checkTerms" />
-            <p>I accept <a href='#'>Terms & Conditions</a></p>
-          </div>
-          <div className='submit-button'>
-            <input type='submit' className='btn btn-md btn-success' name='Submit' value='Submit' />
-          </div>
-        </form>
-      </div>
+            <div className='terms-condition'>
+              <input type='checkbox' name='terms-condition' id="checkTerms" />
+              <p>I accept <a href='#'>Terms & Conditions</a></p>
+            </div>
+            <div className='submit-button'>
+              <input type='submit' className='btn btn-md btn-success' name='Submit' value='Submit' />
+            </div>
+          </form>
+        </div>
       </div>
 
       <div id="otp-model" className='d-none'>
