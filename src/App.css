@@ -201,19 +201,46 @@ input[type="date"]:valid:before {
   }
 }
 
-.otp-model{
+#otp-model{
+  background: #0000004d;
+  height: 100vh;
+  width: 100%;
   position: absolute;
-  top:50%;
-  left:50%;
-  right:10px;
-  transform: translate(-50%,-50%);
+  z-index: 5;
+  top: 0%;
+  left: 0%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.otp-model .card{
+#otp-model .card{
   border-radius:0px;
-  /* background:rgb(212, 212, 212); */
+  width:40%;
+  padding:10px;
+  box-shadow: 0px 0px 10px #c9c8c8;
+}
+#otpVerifyForm .otp-input-box input{
+  margin-right:10px;
+  height:50px;
+  width:50px;
 }
 
-.otp-model .card .form-control{
+#otpVerifyForm .submit-button input{
   border-radius:0px;
+  background-color:#51af4b;
+  border:1px solid #51af4b;
+}
+
+#otp-model .card .form-control{
+  border-radius:0px;
+}
+
+#otpVerifyForm .submit-button a{
+  text-decoration: none;
+  font-size:15px;
+}
+#otpVerifyForm .submit-button #otpTimer{
+  color:gray;
 }

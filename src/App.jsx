@@ -19,6 +19,7 @@ function App() {
   const [allStates, setStates] = useState('');
   const [allDistricts, setAllDistricts] = useState('');
   const [getPhone, setPhone] = useState('');
+  const [getTimerCount, setTimerCount] = useState(120);
   
 
   const getCountry = (event) => {
@@ -83,10 +84,39 @@ function App() {
       });
 
       if(response.data.status == 200 || response.data.type == 'success'){
+        const inputs = document.querySelectorAll('.otp-inputs');
 
-       
+        inputs.forEach(function(input, index) {
+            input.addEventListener('keyup', function() {
+                if (this.value.length >= 1) {
+                    if (index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                }
+            });
+    
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Backspace' && this.value.length === 0) {
+                    if (index > 0) {
+                        inputs[index - 1].focus();
+                    }
+                }
+            });
+        });
 
         
+        document.getElementById("otp-model").classList.remove("d-none");
+        let count = 120;
+        const timer = setInterval(function() {
+          count--;
+          setTimerCount(count);
+          if (count === 0) {
+            clearInterval(timer);
+            document.getElementById('otpTimer').classList.add('d-none');
+            document.getElementById('resendOTP').classList.remove('d-none');
+          }
+        }, 1000);
+        document.getElementById('otpVerifyForm').reset();
       }else{
         Swal.fire({
           title: 'Oops! Something went wrong',
@@ -101,6 +131,94 @@ function App() {
         icon: 'error',
       });
     }
+  }
+
+  const verifyOTPForm = async (event) => {
+    event.preventDefault();
+
+    let formData = new FormData(event.target);
+    let entries = Object.fromEntries(formData)
+    let phone = entries.phone;
+    let otp = entries.otp1+entries.otp2+entries.otp3+entries.otp4+entries.otp5+entries.otp6
+
+    try {
+      const response = await axios.post('http://127.0.0.1:8000/api/verify-otp', {'phone' : phone, 'otp': otp}, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+
+      if(response.data.status == 200 || response.data.type == 'success'){
+        document.getElementById("otp-model").classList.add("d-none");
+        Swal.fire({
+          title: 'Great!',
+          text: response.data.message,
+          icon: 'success',
+          confirmButtonText: 'OK'
+        }).then((result) => {
+            if(result.isConfirmed){
+              document.getElementById('registrationForm').reset();
+              document.getElementById('otpVerifyForm').reset();
+              setPhone('')
+              Swal.fire({
+                title:'Great',
+                text:"Thank you for applying. You'll get an SMS soon about your warranty card.",
+                icon:'success',
+                showCloseButton: true,
+              })
+            }
+        });
+      }else{
+        Swal.fire({
+          title: 'Oops! Something went wrong',
+          text: response.data.message,
+          icon: 'error',
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        title: 'Oops! Something went wrong',
+        text: error,
+        icon: 'error',
+      });
+    }
+  }
+
+  const resendOTP = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.post('http://127.0.0.1:8000/api/resend-otp', {'phone' : getPhone,}, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+
+      if(response.data.status == 200 || response.data.type == 'success'){
+        Swal.fire({
+          title: 'Great!',
+          text: response.data.message,
+          icon: 'success',
+         showCloseButton:true
+        })
+
+        document.getElementById('otpTimer').classList.add('d-none');
+        document.getElementById('resendOTP').classList.add('d-none');
+      }else{
+        Swal.fire({
+          title: 'Oops! Something went wrong',
+          text: response.data.message,
+          icon: 'error',
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        title: 'Oops! Something went wrong',
+        text: error,
+        icon: 'error',
+      });
+    }
+
   }
 
   return (
@@ -237,21 +355,29 @@ function App() {
       </div>
       </div>
 
-      <div className='otp-model'>
+      <div id="otp-model" className='d-none'>
         <div className="card">
           <div className='card-body'>
             <div className="card-title text-center">
-              <p>Verify Your Phone Number</p>
+              <p>A six digit OTP has been sent to your phone number. Please verfy by entering OTP</p>
+              <h5>Enter OTP</h5>
             </div>
-            <form id="registrationForm">
+            <form id="otpVerifyForm" onSubmit={verifyOTPForm}>
               <div className="form-group mb-4">
                 <input type='hidden' name='phone' className='form-control' placeholder='Email Address' value={getPhone} />
               </div>
-              <div className="form-group mb-4">
-                <input type='number' name='otp' className='form-control' placeholder='Enter OTP' />
+              <div className="form-group mb-4 d-flex flex-row justify-content-evenly align-items-center otp-input-box">
+                <input type='text' name='otp1' className='form-control otp-inputs' maxLength="1" />
+                <input type='text' name='otp2' className='form-control otp-inputs' maxLength="1" />
+                <input type='text' name='otp3' className='form-control otp-inputs' maxLength="1" />
+                <input type='text' name='otp4' className='form-control otp-inputs' maxLength="1" />
+                <input type='text' name='otp5' className='form-control otp-inputs' maxLength="1" />
+                <input type='text' name='otp6' className='form-control otp-inputs' maxLength="1" />
               </div>
-              <div className='submit-button'>
-                <input type='submit' className='btn btn-md btn-success' name='Submit' value='Submit' />
+              <div className='submit-button d-flex flex-row justify-content-between align-items-center'>
+                <input type='submit' className='btn btn-md btn-success' name='Submit' value='Verify' />
+                <a href="javascript:void(0)" id="otpTimer" >Resend OTP in {getTimerCount} sec</a>
+                <a href="#" id="resendOTP" className='d-none' onClick={resendOTP}>Resend OTP</a>
               </div>
             </form> 
           </div>
