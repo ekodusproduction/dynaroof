@@ -267,8 +267,8 @@ function App() {
               <div className='col-lg-4 col-md-6 col-sm-6'>
                 <select name='materialType' className='form-control' required>
                   <option value='' disabled selected hidden>Select Material Type</option>
-                  <option value='SuperPro(20 Years)'>Super Pro (20 Years)</option>
-                  <option value='Pro(10 Years)'>Pro (10 Years)</option>
+                  <option value='SuperPro(20-Years)'>Super Pro (20 Years)</option>
+                  <option value='Pro(10-Years)'>Pro (10 Years)</option>
                 </select>
               </div>
               <div className='col-lg-4 col-md-6 col-sm-6'>
