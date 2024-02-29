@@ -251,6 +251,10 @@ input[type="date"]:valid:before {
   #otp-model .card {
     width: 30%;
   }
+
+  #serial-no-model .card {
+    width: 30%;
+  }
 }
 
 @media only screen and (max-width: 1024px){
@@ -285,6 +289,15 @@ input[type="date"]:valid:before {
   #otp-model .card {
     width: 96%;
   }
+
+  #serial-no-model .card {
+    width: 96%;
+  }
+
+  #serial-no-model img{
+    height:100px;
+    width:100%;
+  }
 }
 
 @media only screen and (min-width: 650px) and (max-width:1024px){
@@ -294,5 +307,14 @@ input[type="date"]:valid:before {
 
   #otp-model .card {
     width: 65%;
+  }
+
+  #serial-no-model .card {
+    width: 65%;
+  }
+
+  #serial-no-model img{
+    height:100px;
+    width:100%;
   }
 }

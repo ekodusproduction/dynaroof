@@ -20,6 +20,9 @@ function App() {
   const [allDistricts, setAllDistricts] = useState('');
   const [getPhone, setPhone] = useState('');
   const [getTimerCount, setTimerCount] = useState(120);
+
+  const base_url = 'http://127.0.0.1:8000';
+  // const base_url = 'https://warranty.dynaroof.com';
   
 
   const getCountry = (event) => {
@@ -80,7 +83,7 @@ function App() {
       setPhone(event.target.phoneNumber.value);
 
       try {
-        const response = await axios.post('http://127.0.0.1:8000/api/customer-registration', formData, {
+        const response = await axios.post(`${base_url}/api/customer-registration`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
@@ -154,7 +157,7 @@ function App() {
     let otp = entries.otp1+entries.otp2+entries.otp3+entries.otp4+entries.otp5+entries.otp6
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/verify-otp', {'phone' : phone, 'otp': otp}, {
+      const response = await axios.post(`${base_url}/api/verify-otp`, {'phone' : phone, 'otp': otp}, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -200,7 +203,7 @@ function App() {
     event.preventDefault();
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/resend-otp', {'phone' : getPhone,}, {
+      const response = await axios.post(`${base_url}/api/resend-otp`, {'phone' : getPhone,}, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
