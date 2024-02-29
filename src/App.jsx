@@ -21,8 +21,8 @@ function App() {
   const [getPhone, setPhone] = useState('');
   const [getTimerCount, setTimerCount] = useState(120);
 
-  const base_url = 'http://127.0.0.1:8000';
-  // const base_url = 'https://warranty.dynaroof.com';
+  // const base_url = 'http://127.0.0.1:8000';
+  const base_url = 'https://warranty.dynaroof.com';
   
 
   const getCountry = (event) => {
