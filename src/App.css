@@ -215,6 +215,38 @@ input[type="date"]:valid:before {
   color:gray;
 }
 
+#serial-no-model{
+  background: #0000004d;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: 5;
+  top: 0%;
+  left: 0%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#serial-no-model .card{
+  border-radius:0px;
+  width:40%;
+  padding:10px;
+  box-shadow: 0px 0px 10px #c9c8c8;
+}
+
+#serial-no-model .submit-button input{
+  border-radius:0px;
+  background-color:#51af4b;
+  border:1px solid #51af4b;
+}
+
+#serial-no-model img{
+  height:150px;
+  width:100%;
+}
+
 @media only screen and (min-width: 1025px){
   #otp-model .card {
     width: 30%;

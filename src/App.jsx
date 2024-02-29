@@ -233,6 +233,13 @@ function App() {
 
   }
 
+  const showSerialNumberModel = () => {
+    document.getElementById("serial-no-model").classList.remove("d-none");
+  }
+  const closeSerialNumberModel = () => {
+    document.getElementById("serial-no-model").classList.add("d-none");
+  }
+
   return (
     <>
       <div className='main-block'>
@@ -341,8 +348,8 @@ function App() {
             <div className='row'>
               <div className='col-md-6'>
                 <div className="input-group">
-                  <input type='text' className='form-control' name='serialNumber' placeholder='Serial Number'  required/>
-                  <span className="input-group-text"><IoMdInformationCircle /></span>
+                  <input type='text' className='form-control' name='serialNumber' placeholder='Serial Number'  minLength={5} maxLength={5} required/>
+                  <span className="input-group-text" onClick={showSerialNumberModel}><IoMdInformationCircle /></span>
                 </div>
               </div>
               <div className='col-md-6'>
@@ -394,7 +401,24 @@ function App() {
             </form> 
           </div>
         </div>
-            
+      </div>
+
+      <div id="serial-no-model" className='d-none'>
+        <div className="card">
+          <div className='card-body'>
+            <div className="card-title text-center">
+              <p>Please Enter 5 digit product serial number as shown in the image.</p>
+            </div>
+            <div>
+              <div className="form-group mb-4 d-flex flex-row justify-content-evenly align-items-center">
+                <img src='/assets/product-serial-number.jpg' alt='dynaroof-product serial number'/>
+              </div>
+              <div className='submit-button d-flex flex-row justify-content-end align-items-center'>
+                <input type='button' className='btn btn-md btn-success' name='close' value='Close' onClick={closeSerialNumberModel}/>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
     
