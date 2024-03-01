@@ -247,6 +247,64 @@ input[type="date"]:valid:before {
   width:100%;
 }
 
+.navbar{
+  height: 80px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px #dfdfdf;
+  padding:5px 100px 5px 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.navbar img{
+  height:60px;
+}
+
+.navbar .nav-links{
+  margin-bottom:0px;
+  list-style: none;
+}
+.navbar .nav-links  li button{
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 5px 15px 5px 15px;
+  background: #097ba3;
+  color: white;
+  border: 1px solid #097ba3;
+}
+
+.terms-and-conditions-div{
+  margin-top:30px;
+  margin-bottom:80px;
+}
+
+.terms-and-conditions-div h5{
+  margin-top:10px;
+}
+
+.terms-and-conditions-div p{
+  text-align: justify;
+  margin-left:5px;
+  font-size:14px;
+  margin-bottom:0px;
+}
+
+.terms-and-conditions-div .terms-list ul{
+  list-style: numeric;
+}
+
+table, th, td{
+  border:1px solid black;
+  padding:5px;
+  font-size:14px;
+  margin-bottom:10px;
+}
+
 @media only screen and (min-width: 1025px){
   #otp-model .card {
     width: 30%;
@@ -316,5 +374,21 @@ input[type="date"]:valid:before {
   #serial-no-model img{
     height:100px;
     width:100%;
+  }
+}
+
+@media (min-width: 568px) {
+  .container {
+    width: 550px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
   }
 }
