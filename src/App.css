@@ -5,6 +5,13 @@
   font-family: 'Roboto', sans-serif;
 }
 
+label{
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #757272;
+  font-weight: 400;
+}
+
 .main-block{
   display:flex;
   flex-direction: row;

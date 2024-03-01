@@ -267,26 +267,33 @@ const Home = () => {
         <div className='warranty-form-div'>
           <h4>Customer Warranty Registration Form</h4>
           <form id="registrationForm" onSubmit={submitRegistrationForm}>
-            <input type='text' name='fullName' className='form-control' placeholder='Full Name'  required/>
-            <input type='email' name='email' className='form-control' placeholder='Email Address'  required/>
+            <label htmlFor="">Full Name <sup style={{color:"red"}}>*</sup></label>
+            <input type='text' name='fullName' className='form-control' placeholder='e.g Jhon Doe'  required/>
+            <label htmlFor="">Email <sup style={{color:"red"}}>*</sup></label>
+            <input type='email' name='email' className='form-control' placeholder='jhondoe@xyz.com'  required/>
+            <label htmlFor="">Phone Number <sup style={{color:"red"}}>*</sup></label>
             <input type='text' name='phoneNumber' className='form-control' placeholder='Phone Number'  required/>
             
             <div className='row'>
               <div className='col-lg-4 col-md-6 col-sm-6'>
+                <label htmlFor="">Dealer Name <sup style={{color:"red"}}>*</sup></label>
                 <input type='text' className='form-control' name='dealerName' placeholder='Dealer Name'  required/>
               </div>
               <div className='col-lg-4 col-md-6 col-sm-6'>
+                <label htmlFor="">Select Material Type<sup style={{color:"red"}}>*</sup></label>
                 <select name='materialType' className='form-control' required>
-                  <option value='' disabled selected hidden>Select Material Type</option>
+                  <option value='' disabled selected hidden> - Select -</option>
                   <option value='SuperPro(20-Years)'>Super Pro (20 Years)</option>
                   <option value='Pro(10-Years)'>Pro (10 Years)</option>
                 </select>
               </div>
               <div className='col-lg-4 col-md-6 col-sm-6'>
-                <input type='date' className='form-control'name="dateOfPurchase"  placeholder='Date of Purchase :'  required/>
+                <label htmlFor="">Date of Purchase<sup style={{color:"red"}}>*</sup></label>
+                <input type='date' className='form-control'name="dateOfPurchase"  placeholder='Date :'  required/>
               </div>
             
               <div className='col-lg-4 col-md-6 col-sm-6'>
+                <label htmlFor="">Country<sup style={{color:"red"}}>*</sup></label>
                 <select value={getSelectedCountry} name='country' className='form-control' onChange={getCountry} required>
                   <option value='' disabled selected hidden>Select Country</option>
                   <option value='india'>India</option>
@@ -296,8 +303,9 @@ const Home = () => {
               {
                 getSelectedCountry == 'bhutan' ? 
                 <div className='col-lg-8 col-md-6 col-sm-6'>
+                  <label htmlFor="">Select District<sup style={{color:"red"}}>*</sup></label>
                   <select name='district' className='form-control' required>
-                    <option value='' disabled selected hidden>Select District</option>
+                    <option value='' disabled selected hidden>- Select -</option>
                     {
                       allDistricts.length > 0 ?
                       allDistricts.map( (item, index) => (
@@ -311,8 +319,9 @@ const Home = () => {
                 <>
 
                   <div className='col-lg-4 col-md-6 col-sm-6'>
+                    <label htmlFor="">Select State<sup style={{color:"red"}}>*</sup></label>
                     <select name='state' className='form-control' onChange={getSelectedState} required>
-                      <option value='' disabled selected hidden>Select State</option>
+                      <option value='' disabled selected hidden>- Select -</option>
                       {
                         allStates.length > 0 ?
                         allStates.map( (item, index) => (
@@ -323,9 +332,10 @@ const Home = () => {
                     </select>
                   </div>
                   <div className='col-lg-4 col-md-6 col-sm-6'>
+                    <label htmlFor="">Select District<sup style={{color:"red"}}>*</sup></label>
                     <select name='district' className='form-control' onChange={getDistrictsOfStates} required>
 
-                      <option value='' disabled selected hidden>Select District</option>
+                      <option value='' disabled selected hidden>- Select -</option>
                       {
                         allDistricts.length > 0 ?
                         allDistricts.map( (item, index) => (
@@ -343,21 +353,25 @@ const Home = () => {
             </div>
             <div className='row'>
               <div className='col-md-6'>
-                <input type='text' className='form-control' name='colorOfSheets' placeholder='Color of Sheets'  required/> 
+                <label htmlFor="">Color of Sheets<sup style={{color:"red"}}>*</sup></label>
+                <input type='text' className='form-control' name='colorOfSheets' placeholder='red, green, blue, ...'  required/> 
               </div>
               <div className='col-md-6'>
-                <input type='number' className='form-control' name='numberOfSheets' placeholder='Number of Sheets' min={0} required/>
+                <label htmlFor="">Number of Sheets<sup style={{color:"red"}}>*</sup></label>
+                <input type='number' className='form-control' name='numberOfSheets' placeholder='1,2,3,...' min={0} required/>
               </div>
             </div>
             <div className='row'>
               <div className='col-md-6'>
+                <label htmlFor="">Serial Number<sup style={{color:"red"}}>*</sup></label>
                 <div className="input-group">
                   <input type='text' className='form-control' name='serialNumber' placeholder='Serial Number'  minLength={5} maxLength={5} required/>
                   <span className="input-group-text" onClick={showSerialNumberModel}><IoMdInformationCircle /></span>
                 </div>
               </div>
               <div className='col-md-6'>
-                <input type='number' className='form-control' name='thicknessOfSheets' placeholder='Thickness of Sheets (mm)' min={0} required/>
+                <label htmlFor="">Thickness of Sheets<sup style={{color:"red"}}>*</sup></label>
+                <input type='number' className='form-control' name='thicknessOfSheets' placeholder='0.35, 0.45, ...' min={0} required/>
               </div>
             </div>
             <div className='upload-div'>
