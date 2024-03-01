@@ -91,6 +91,8 @@
 .warranty-form-div{
   width: 55%;
   padding:30px 50px 10px 50px;
+  height:100vh;
+  overflow: auto;
 }
 .warranty-form-div h4{
   margin-bottom:20px;
