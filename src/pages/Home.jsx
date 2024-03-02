@@ -64,8 +64,8 @@ const Home = () => {
     event.preventDefault();
 
     let customerSubmitButton = document.getElementById('customer-form-submit-btn');
-    // customerSubmitButton.disabled = true;
-    // customerSubmitButton.value = 'Please wait...';
+    customerSubmitButton.disabled = true;
+    customerSubmitButton.value = 'Please wait...';
 
     const terms_and_conditions = document.getElementById('checkTerms')
     if(terms_and_conditions.checked){
