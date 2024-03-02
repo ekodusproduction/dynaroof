@@ -70,6 +70,13 @@ const Home = () => {
     const terms_and_conditions = document.getElementById('checkTerms')
     if(terms_and_conditions.checked){
 
+      let state;
+      if(event.target.state.value == undefined){
+        state =  null;
+      }else{
+        state = event.target.state.value;
+      }
+
       let formData = new FormData();
       formData.append('fullName', event.target.fullName.value);
       formData.append('email', event.target.email.value);
@@ -79,7 +86,7 @@ const Home = () => {
       formData.append('dateOfPurchase', event.target.dateOfPurchase.value);
       formData.append('country', event.target.country.value);
       formData.append('district', event.target.district.value);
-      formData.append('state', event.target.state.value);
+      formData.append('state', state);
       formData.append('colorOfSheets', event.target.colorOfSheets.value);
       formData.append('numberOfSheets', event.target.numberOfSheets.value);
       formData.append('serialNumber', event.target.serialNumber.value);
