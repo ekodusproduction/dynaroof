@@ -135,6 +135,22 @@ input[type="date"]:valid:before {
   font-weight: 400;
 }
 
+input[type="text"] {
+  font-size:12px;
+}
+
+input[type="email"] {
+  font-size:12px;
+}
+
+input[type="number"] {
+  font-size:12px;
+}
+
+input[type="file"] {
+  font-size:12px;
+}
+
 .input-group-text{
   background: white;
   max-height: 40px;

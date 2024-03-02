@@ -63,6 +63,10 @@ const Home = () => {
   const submitRegistrationForm = async (event) =>{
     event.preventDefault();
 
+    let customerSubmitButton = document.getElementById('customer-form-submit-btn');
+    customerSubmitButton.disabled = true;
+    customerSubmitButton.value = 'Please wait...';
+
     const terms_and_conditions = document.getElementById('checkTerms')
     if(terms_and_conditions.checked){
 
@@ -129,12 +133,18 @@ const Home = () => {
             }
           }, 1000);
           document.getElementById('otpVerifyForm').reset();
+
+          customerSubmitButton.disabled = true;
+          customerSubmitButton.value = 'Please wait...';
         }else{
           Swal.fire({
             title: 'Oops! Something went wrong',
             text: response.data.message,
             icon: 'error',
           });
+
+          customerSubmitButton.disabled = false;
+          customerSubmitButton.value = 'Submit';
         }
       } catch (error) {
         Swal.fire({
@@ -142,6 +152,9 @@ const Home = () => {
           text: error,
           icon: 'error',
         });
+
+        customerSubmitButton.disabled = false;
+        customerSubmitButton.value = 'Submit';
       }
     }else{
       Swal.fire({
@@ -149,6 +162,9 @@ const Home = () => {
         text:'Please accept Terms and Conditions',
         icon:'warning'
       })
+
+      customerSubmitButton.disabled = false;
+      customerSubmitButton.value = 'Submit';
     }
 
     
@@ -376,7 +392,7 @@ const Home = () => {
               </div>
               <div className='col-md-6'>
                 <label htmlFor="">Thickness of Sheets <sup style={{color:"red"}}>*</sup></label>
-                <input type='number' className='form-control' name='thicknessOfSheets' placeholder='0.35, 0.45, ...' min={0} required/>
+                <input type='text' className='form-control' name='thicknessOfSheets' placeholder='0.35, 0.45, ...' required/>
               </div>
             </div>
             <div className='upload-div'>
@@ -391,7 +407,7 @@ const Home = () => {
               <p>I accept <Link to='/termsandconditions'>Terms & Conditions</Link></p>
             </div>
             <div className='submit-button'>
-              <input type='submit' className='btn btn-md btn-success' name='Submit' value='Submit' />
+              <input type='submit' className='btn btn-md btn-success' id="customer-form-submit-btn" name='Submit' value='Submit' />
             </div>
           </form>
         </div>
