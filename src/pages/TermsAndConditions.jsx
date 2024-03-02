@@ -329,7 +329,7 @@ const TermsAndConditions = () => {
                     the appropriate courts at Guwahati, Assam(India).
                 </p>
                 
-                <p style={{textAlign:"center", marginTop:"50px"}}>-------------- End of Terms And Conditions ---------------</p>
+                <p style={{textAlign:"center", marginTop:"50px"}}>xxxxxxxxxxxxxxxxxxxx End of Terms And Conditions xxxxxxxxxxxxxxxxxxxx</p>
             </div>
         </>
 
