@@ -64,18 +64,19 @@ const Home = () => {
     event.preventDefault();
 
     let customerSubmitButton = document.getElementById('customer-form-submit-btn');
-    customerSubmitButton.disabled = true;
-    customerSubmitButton.value = 'Please wait...';
+    // customerSubmitButton.disabled = true;
+    // customerSubmitButton.value = 'Please wait...';
 
     const terms_and_conditions = document.getElementById('checkTerms')
     if(terms_and_conditions.checked){
 
       let state;
-      if(event.target.state.value == undefined){
+      if(event.target.state == undefined){
         state =  null;
       }else{
         state = event.target.state.value;
       }
+
 
       let formData = new FormData();
       formData.append('fullName', event.target.fullName.value);
