@@ -454,7 +454,7 @@ const Home = () => {
         <div className="card">
           <div className='card-body'>
             <div className="card-title text-center">
-              <p>Please Enter 5 digit product serial number as shown in the image.</p>
+              <p>Please Enter 6 digit product serial number as shown in the image e.g P26BB4.</p>
             </div>
             <div>
               <div className="form-group mb-4 d-flex flex-row justify-content-evenly align-items-center">
