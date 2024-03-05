@@ -458,7 +458,7 @@ const Home = () => {
             </div>
             <div>
               <div className="form-group mb-4 d-flex flex-row justify-content-evenly align-items-center">
-                <img src='/assets/product-serial-number.jpg' alt='dynaroof-product serial number'/>
+                <img src='/assets/product-serial-number.jpeg' alt='dynaroof-product serial number'/>
               </div>
               <div className='submit-button d-flex flex-row justify-content-end align-items-center'>
                 <input type='button' className='btn btn-md btn-success' name='close' value='Close' onClick={closeSerialNumberModel}/>
