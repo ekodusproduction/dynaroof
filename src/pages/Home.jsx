@@ -394,7 +394,7 @@ const Home = () => {
               <div className='col-md-6'>
                 <label htmlFor="">Serial Number <sup style={{color:"red"}}>*</sup></label>
                 <div className="input-group">
-                  <input type='text' className='form-control' name='serialNumber' placeholder='Serial Number'  minLength={5} maxLength={5} required/>
+                  <input type='text' className='form-control' name='serialNumber' placeholder='Serial Number'  minLength={6} maxLength={6} required/>
                   <span className="input-group-text" onClick={showSerialNumberModel}><IoMdInformationCircle /></span>
                 </div>
               </div>
