@@ -273,7 +273,7 @@ input[type="file"] {
 }
 
 .navbar{
-  height: 80px;
+  height: 100%;
   overflow: hidden;
   background: #ffffff;
   box-shadow: 0px 0px 10px #dfdfdf;
@@ -329,6 +329,7 @@ table, th, td{
   font-size:14px;
   margin-bottom:10px;
 }
+
 
 @media only screen and (min-width: 1025px){
   #otp-model .card {

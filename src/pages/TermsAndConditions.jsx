@@ -11,7 +11,7 @@ const TermsAndConditions = () => {
         <>
             <div className="navbar">
                 <img src="/assets/dynaroof-logo.png" alt="" />
-                <ul className="nav-links">
+                <ul className="nav-links mt-2 mb-3">
                     <li><button onClick={handleClick} title="Go Home">Home</button></li>
                 </ul>
             </div>
@@ -329,7 +329,7 @@ const TermsAndConditions = () => {
                     the appropriate courts at Guwahati, Assam(India).
                 </p>
                 
-                <p style={{textAlign:"center", marginTop:"50px"}}>xxxxxxxxxxxxxxxxxxxx End of Terms And Conditions xxxxxxxxxxxxxxxxxxxx</p>
+                <p style={{textAlign:"center", marginTop:"50px"}}>xxx End of Terms And Conditions xxx</p>
             </div>
         </>
 
