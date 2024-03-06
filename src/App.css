@@ -268,7 +268,7 @@ input[type="file"] {
 }
 
 #serial-no-model img{
-  height:150px;
+  height:250px;
   width:100%;
 }
 
@@ -379,7 +379,7 @@ table, th, td{
   }
 
   #serial-no-model img{
-    height:100px;
+    height:250px;
     width:100%;
   }
 }
@@ -398,7 +398,7 @@ table, th, td{
   }
 
   #serial-no-model img{
-    height:100px;
+    height:250px;
     width:100%;
   }
 }

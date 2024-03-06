@@ -453,12 +453,13 @@ const Home = () => {
       <div id="serial-no-model" className='d-none'>
         <div className="card">
           <div className='card-body'>
-            <div className="card-title text-center">
-              <p>Please Enter 6 digit product serial number as shown in the image e.g P26BB4.</p>
+            <div className="card-title text-justify">
+              <p style={{fontSize:'14px'}}>Please Enter 6 digit product serial number available on the back of your purchased sheet.</p>
+              <p style={{fontSize:'12px'}}> <span style={{color:'red'}}>Note:</span> Code shown in the image is an example and not an actual code.</p>
             </div>
             <div>
               <div className="form-group mb-4 d-flex flex-row justify-content-evenly align-items-center">
-                <img src='/assets/product-serial-number.jpeg' alt='dynaroof-product serial number'/>
+                <img src='/assets/product-serial-number.png' alt='dynaroof-product serial number'/>
               </div>
               <div className='submit-button d-flex flex-row justify-content-end align-items-center'>
                 <input type='button' className='btn btn-md btn-success' name='close' value='Close' onClick={closeSerialNumberModel}/>
