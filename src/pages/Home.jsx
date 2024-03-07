@@ -279,12 +279,12 @@ const Home = () => {
         <div className='side-banner-div'>
           <div className='side-banner-floating-header'>
             <img src='/assets/dynaroof-logo.png' alt='dynaroof-logo' />
-            <ul>
+            {/* <ul>
               <li><FaFacebook /></li>
               <li><RiInstagramFill/></li>
               <li><FaLinkedin /></li>
               <li><IoLogoYoutube/></li>
-            </ul>
+            </ul> */}
           </div>
           <div className='side-banner-bottom-text'>
             <p><sup><FaQuoteLeft style={{fontSize:'12px'}}/></sup>  BUILD YOUR DREAM PROPERTY</p>
