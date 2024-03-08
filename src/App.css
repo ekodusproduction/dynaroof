@@ -331,6 +331,72 @@ table, th, td{
 }
 
 
+#terms-model{
+  background: #0000004d;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 5;
+  top: 0%;
+  left: 0%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding:20px;
+}
+
+#terms-model .card{
+  border-radius:10px;
+  width:auto;
+  padding:10px;
+  box-shadow: 0px 0px 10px #c9c8c8;
+  height:100%;
+}
+
+#terms-model .card .card-header{
+  background: #022547;
+  border-radius: 5px;
+  border: 1px solid #f3f4f5;
+  margin-bottom:5px;
+}
+
+#terms-model .card .card-footer{
+  background: #f3f3f3;
+  border-radius: 4px;
+  color: rgb(105, 105, 105);
+  border: none;
+}
+
+#terms-model .card .card-header p{
+  font-size:20px;
+  font-weight: 600;
+  margin-bottom: 0px;
+  color: rgb(255, 255, 255);
+}
+
+#terms-model .card .card-footer button{
+  float: right;
+  border-radius: 0px;
+  background-color: #4CAF50;
+  border:1px solid #4CAF50;
+
+}
+
+#terms-model .card .card-body{
+  height:100%;
+  padding:20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#terms-model .card .card-footer button:hover{
+  background-color: #2E7D32;
+  border:1px solid #2E7D32;
+  box-shadow: 0px 2px 10px #2E7D32 inset;
+  
+}
+
+
 @media only screen and (min-width: 1025px){
   #otp-model .card {
     width: 30%;
