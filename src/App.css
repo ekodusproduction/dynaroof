@@ -374,11 +374,18 @@ table, th, td{
   color: rgb(255, 255, 255);
 }
 
-#terms-model .card .card-footer button{
+#terms-model .card .card-footer .accept{
   float: right;
   border-radius: 0px;
   background-color: #4CAF50;
   border:1px solid #4CAF50;
+  margin-right:10px;
+
+}
+
+#terms-model .card .card-footer .decline{
+  float: right;
+  border-radius: 0px;
 
 }
 
@@ -389,7 +396,7 @@ table, th, td{
   overflow-x: hidden;
 }
 
-#terms-model .card .card-footer button:hover{
+#terms-model .card .card-footer .accept:hover{
   background-color: #2E7D32;
   border:1px solid #2E7D32;
   box-shadow: 0px 2px 10px #2E7D32 inset;

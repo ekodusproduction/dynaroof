@@ -275,7 +275,7 @@ const Home = () => {
 
   const acceptTermsViaPopup = () => {
     document.getElementById("terms-model").classList.add("d-none");
-    document.getElementById('checkTerms').checked;
+    document.getElementById('checkTerms').checked = true;
   }
 
   const isCheckBoxChecked = () => {
@@ -283,6 +283,11 @@ const Home = () => {
     if(terms_and_conditions.checked){
       document.getElementById("terms-model").classList.remove("d-none");
     }
+  }
+
+  const declineTermsViaPopup = () => {
+    document.getElementById("terms-model").classList.add("d-none");
+    document.getElementById('checkTerms').checked = false;
   }
 
     return (
@@ -799,7 +804,8 @@ const Home = () => {
             </div>
           </div>
           <div className="card-footer">
-            <button className='btn btn-success' onClick={acceptTermsViaPopup}>Accept</button>
+            <button className='btn btn-danger decline' onClick={declineTermsViaPopup}>Decline</button>
+            <button className='btn btn-success accept' onClick={acceptTermsViaPopup}>Accept</button>
           </div>
         </div>
       </div>
