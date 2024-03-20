@@ -441,7 +441,7 @@ const Home = () => {
             </div>
             <div className='terms-condition'>
               <input type='checkbox' name='terms-condition' id="checkTerms" onClick={isCheckBoxChecked}/>
-              <p>I accept <Link to='/termsandconditions'>Terms & Conditions</Link></p>
+              <p>I accept Terms & Conditions</p>
             </div>
             <div className='submit-button'>
               <input type='submit' className='btn btn-md btn-success' id="customer-form-submit-btn" name='Submit' value='Submit' />
