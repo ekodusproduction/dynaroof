@@ -417,7 +417,7 @@ const Home = () => {
             <div className='upload-div'>
               <div className='upload-div-header'>
                 <h6>Upload Invoice <sup style={{color:"red"}}>*</sup></h6>
-                <p>( Accepted file types: jpg, png, jpeg, pdf, docx. Max file size: 2MB)</p>
+                <p>( Accepted file types: jpg, png, jpeg, pdf, docx.)</p>
               </div>
               <input type='file' name='invoice' className='form-control'  required/>
             </div>
@@ -487,58 +487,100 @@ const Home = () => {
           </div>
           <div className='card-body'>
             <div className="container terms-and-conditions-div" style={{marginTop:'10px'}}>
-                <h5>Dyna Pro & Super Pro with 10 & 20 Years Warranty</h5>
+              <div className="terms-area">
+                <div className="d-flex flex-row justify-conten-center align-items-center">
+                  <h5>Dyna Pro (10Years) & Super Pro (20 Years) Warranty</h5>
+                  <hr />
+                </div>
+                
                 <p>
-                    DynaRoof Pvt. Ltd. hereby provides this Warranty to the Bonafide Buyer of the Product named
-                    in the invoice (‘Customer’ or ‘Buyer’), applicable on Dyna Pro and Dyna Super Pro- color coated
-                    roofing sheets (Detail specifications provided in the invoice) (Hereinafter referred as ‘Product’),
-                    to be used for roofing applications only against the detail T&C mentioned below as “Warranty Applicable on”.
-                    During the warranty for a period of 10 years from the date of purchase and installation (Installation has
-                    to be done within 10-15days from the date of purchase), the company will at its sole discretion, repair or
-                    replace the product or parts of a product that prove to be defective because of perforation due to 
-                    manufacturing defects, under normal conditions.
+                    DynaRoof Pvt. Ltd. hereby provides this Warranty to the Bonafide Buyer of the Product named in the invoice
+                    (‘Customer’ or ‘Buyer’), applicable on Dyna Pro and Dyna Super Pro- color coated roofing sheets (Detail specifications provided in the invoice)
+                    (Hereinafter referred as ‘Product’), to be used for roofing applications only against the detail T&C mentioned below
+                    as “Warranty Applicable on”. During the warranty for a period of 10 Years for Dyna Pro and 20 Years for Dyna Super Pro
+                    from the date of purchase and installation (Installation has to be done within 30days from the date of purchase),
+                    the company will at its sole discretion, repair or replace the product or parts of a product that prove to be defective
+                    because of perforation due to any manufacturing defects, under normal conditions. To get the warranty facilitation one has
+                    to Visit Company’s website or the link https://wa.dynaroof.com/  and register themselves by filling the required fields in
+                    the form. The registration must be done within 30 days from the date of purchase of the material to avail warranty on the 
+                    products. No warranty will be applicable by any means if the registration not done under 30 days.
                 </p>
-                <h5>Terms And Conditions</h5>
+                <p>The Warranty is subject to standard terms printed on tax invoice and terms and conditions as mentioned below.</p>
+                <div className="d-flex flex-row justify-conten-center align-items-center">
+                  <h5>Terms And Conditions</h5>
+                  <hr />
+                </div>
+                
                 <ol className="terms-list">
                     <li>
                         <p>
-                            The product must be of the premium category of DynaRoof that termed as Dyna Pro with 10 Years or Dyna
-                            Super Pro with 20 years of warranty and must be purchased from a DynaRoof authorized distributor/Dealer/retailer
-                            of the company only having non erasable product liner marking as “0.00mm a product of DynaRoof Pvt. Ltd AZ150 A/M/WB
-                            DD MM YY ISO 9001:2015 having its unique code starting with S or P (S-Super Pro and P- Pro) and combination of Number
-                            and Letter i.e- S 26B B4 or P 26B B4 and processed and installed for roofing in 60 days from the date of manufacturing
-                            and supply within the Indian and territory of Bhutan. 
+                          The product must be of the premium category of DynaRoof, termed as Dyna Pro with 10 Years or Dyna Super Pro 
+                          with 20 years of warranty and must be purchased from a DynaRoof authorized Distributor/Dealer/Retailer of the 
+                          company having its unique code starting with “DynaRoof”  X.XXmm (X- Thickness) a product of DynaRoof Pvt. Ltd 
+                          with a combination of Number and Letter i.e- P 26B B4 or S 26B B4 (P- Dyna Pro and S- Dyna Super Pro) and 
+                          processed and installed for roofing within 90 days from the date of manufacturing and supply within the 
+                          territory of India and Bhutan.
                         </p>
                     </li>
                     <li>
                         <p>
-                            The product as supplied should not come in direct/indirect contact with chemical fumes, before, during or after use.
+                          Please keep a record of the unique code printed on the reverse of your roofing sheet before installation is done, which is mandatory to be filled at the time of filling the warranty registration form.
                         </p>
                     </li>
                     <li>
                         <p>
-                            The roof must be maintained in accordance with the Do’s and Don’ts mentioned in the DynaRoof Customer/Dealer guidelines.
+                          The product as supplied should not come in direct/indirect contact with chemical fumes, before, during or after use.
                         </p>
                     </li>
                     <li>
                         <p>
-                            To get the warranty facilitation one has to Visit Company’s website www.houseofdyna.com and register themselves filling the required fields in the form.
+                          The roof must be maintained in accordance with the Do’s and Don’ts mentioned in the DynaRoof Customer/Dealer guidelines received along with the invoice from dealer or can be availed from the website link of the company- https://dynaroof.com/customer-guidelines/
                         </p>
                     </li>
                     <li>
                         <p>
-                            The registration must be done within 30 days from the date of purchasing of the material to avail warranty on the
-                            products. No warranty will be applicable by any means after 30 days.
+                          Surfaces of the installations must be freely exposed to washing by rainfall and kept clear of accumulated dirt and debris.
                         </p>
+                    </li>
+                    <li>
+                      <p>
+                        Water logging on roofs must be avoided and overlaps must be adequately sealed to prevent ingress of water.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        End user customer must clean the installed sheets at least twice in a year.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        The coated metal must not be cleaned with abrasive or chemical cleaners.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Do not allow contact of coated steel product with incompatible material that includes lead, copper, bare steel, green or chemically treated timber, wet or dry concrete, soils, vegetable matter, any material which will inhibit normal exposure to the atmosphere
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        This warranty specifically excludes from its coverage any defects or failures in the exterior durability standards of the product caused by any force majeure events including acts of God (earthquake, fire, storm, floods, torrential rain, cyclone, hailstorm), falling objects, external force, explosions, fire, riots, civil commotions, acts of war, radiation, harmful gases or fumes, chemicals or foreign substances in the air or atmosphere
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Reference to ISO-9223 this T&C is applicable to the region falls under C2 Level only.
+                      </p>
                     </li>
                 </ol>
+              </div>
+                
 
-                <h5>Warranty not Applicable:</h5>
+                <h5>Warranty not Applicable on:</h5>
                 <ol className="warranty-not-applicable-list">
                     <li>
                         <p>
-                            Water damage to the Product, directly or indirectly, due to condensation, improper storage, handling,
-                            processing, forming or packaging prior to or during installation.
+                          Water damage to the Product, directly or indirectly, due to condensation, improper storage, handling, processing, forming or packaging prior to or during installation.
                         </p>
                     </li>
                     <li>
@@ -552,6 +594,9 @@ const Home = () => {
                             Natural reduction in paint gloss and natural colour change or the paint finish or any change in colour due
                             to accumulation of debris.
                         </p>
+                    </li>
+                    <li>
+                      <p>The warranty does not cover the backside of the coated product.</p>
                     </li>
                     <li>
                         <p>
