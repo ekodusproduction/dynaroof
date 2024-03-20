@@ -408,7 +408,7 @@ table, th, td{
 }
 
 .terms-content{
-  margin-top:50px;
+  margin-top:10px;
 }
 
 .colored-border{
@@ -519,11 +519,11 @@ table, th, td{
 
 .content-area-3 .do-icon{
   background-color: white;
-  height:50px;
-  width:50px;
+  height:40px;
+  width:40px;
   border-radius:50%;
   border:2px solid rgb(245, 41, 41);
-  position:absolute;
+  margin-left:-10px;
 }
 .content-area-3 .do-icon svg{
   color:rgb(245, 41, 41);
@@ -535,14 +535,73 @@ table, th, td{
   border-left: none;
   border-radius:50px;
   width:150px;
-  padding:8px 5px 8px 5px;
-  margin-left:18px;
+  padding:0px 5px 0px 5px;
+  margin-left:10px;
 }
 .content-area-3 .do-content p{
   margin-bottom:0px;
-  margin-left:40px;
+  margin-left:20px;
   font-size:18px;
   font-weight: 600;
+}
+
+.content-area-3 .conditions-div ol li{
+  font-size: 14px;
+  margin-bottom:5px;
+}
+
+.content-area-3 .dont-icon{
+  background-color: white;
+  height:40px;
+  width:40px;
+  border-radius:50%;
+  border:2px solid #198c91;
+  margin-left:-10px;
+}
+
+.content-area-3 .dont-icon svg{
+  color:#198c91;
+  font-size:25px;
+}
+
+.content-area-3 .dont-content{
+  background:#198c91;
+  border:1px solid #198c91;
+  border-left: none;
+  border-radius:50px;
+  width:150px;
+  padding:0px 5px 0px 5px;
+  margin-left:10px;
+}
+.content-area-3 .dont-content p{
+  margin-bottom:0px;
+  margin-left:20px;
+  font-size:18px;
+  font-weight: 600;
+}
+
+.content-area-4{
+  padding:20px;
+  margin-bottom:30px;
+}
+
+.content-area-4 h5{
+  color:#198c91;
+  font-weight: 700;
+  margin-bottom:10px;
+}
+
+.content-area-4 .header{
+  margin-top:50px;
+}
+.content-area-4 p{
+  font-size:14px;
+}
+.content-area-4 .divider{
+  width:500px;
+  border: 3px solid #198c91;
+  border-radius:2px;
+  margin-left:30px;
 }
 
 

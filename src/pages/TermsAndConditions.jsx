@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FaRegThumbsUp } from "react-icons/fa";
+import { FaRegThumbsDown } from "react-icons/fa";
 
 const TermsAndConditions = () => {
 
@@ -10,12 +11,12 @@ const TermsAndConditions = () => {
     };
     return (
         <>
-            <div className="navbar">
+            {/* <div className="navbar">
                 <img src="/assets/dynaroof-logo.png" alt="" />
                 <ul className="nav-links mt-2 mb-3">
                     <li><button onClick={handleClick} title="Go Home">Home</button></li>
                 </ul>
-            </div>
+            </div> */}
             <div className="container">
                 <div className="terms-content">
                     <div className="content-area-1 colored-border">
@@ -220,24 +221,173 @@ const TermsAndConditions = () => {
                         </div>
                         <div className="conditions-div">
                             <div className="d-flex flex-row align-items-center" style={{marginLeft:'10px', marginBottom:'20px'}}>
-                                <div className="do-icon d-flex flex-row justify-content-center align-items-center">
-                                    <FaRegThumbsUp />
-                                </div>
-                                <div className="do-content">
+                                
+                                <div className="do-content d-flex flex-row align-items-center">
+                                    <div className="do-icon d-flex flex-row justify-content-center align-items-center">
+                                        <FaRegThumbsUp />
+                                    </div>
                                     <p>Do's</p>
                                 </div>
                             </div>
                             <ol>
                                 <li>
-                                    The product must be of the premium category of DynaRoof, termed as Dyna Pro with 10 Years or Dyna Super Pro with 20 
-                                    years of warranty and must be purchased from a DynaRoof authorized Distributor/Dealer/Retailer of the company having 
-                                    its unique code starting with “DynaRoof”  X.XXmm (X- Thickness) a product of DynaRoof Pvt. Ltd with a combination of 
-                                    Number and Letter i.e- P 26B B4 or S 26B B4 (P- Dyna Pro and S- Dyna Super Pro) and processed and installed for roofing 
-                                    within 90 days from the date of manufacturing and supply within the territory of India and Bhutan.
+                                    USE PPE while handling & installing.
+                                </li>
+                                <li>
+                                    Keep Product in flat, dry & ventilated areas.
+                                </li>
+                                <li>
+                                    The Product must be lifted with Nylon ropes.
+                                </li>
+                                <li>
+                                    Ensure zero water seepage during storage.
+                                </li>
+                                <li>
+                                    Avoid metal to metal contact
+                                </li>
+                                <li>
+                                    Good quality fasteners to be used.
                                 </li>
                             </ol>
                         </div>
+
+                        <div className="conditions-div" style={{background:'#d40f3a'}}>
+                            <div className="d-flex flex-row align-items-center" style={{marginLeft:'10px', marginBottom:'20px'}}>
+                                
+                                <div className="dont-content d-flex flex-row align-items-center">
+                                    <div className="dont-icon d-flex flex-row justify-content-center align-items-center">
+                                        <FaRegThumbsDown />
+                                    </div>
+                                    <p>Dont's</p>
+                                </div>
+                            </div>
+                            <ol>
+                                <li>
+                                    Product should not come in contact with wet.
+                                </li>
+                                <li>
+                                    Product should not come in contact with cement.
+                                </li>
+                                <li>
+                                    Product should not come in contact with metal filings
+                                </li>
+                                <li>
+                                    Product should not be kept on floor directly.
+                                </li>
+                                <li>
+                                    Do not allow dirt to be accumulated on Product.
+                                </li>
+                                <li>
+                                    Do not slide sheets on rough surface.
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div className="d-flex flex-row align-items-center header">
+                            <h5>Disclaimer of other warranties</h5>
+                            <div className="divider"></div>
+                        </div>
+                        <p>
+                            Except as expressly set forth in this Warranty Certificate, Company disclaims, and Buyer waives, any and all other 
+                            warranties, whether express or implied, oral or written, including without limitation, any implied warranties of 
+                            merchantability or fitness for a particular purpose.
+                        </p>
+
+                        <div className="d-flex flex-row align-items-center header">
+                            <h5>Limitation of remedies and liability:</h5>
+                            <div className="divider"></div>
+                        </div>
+                        <p>
+                            The parties agree that the Buyer’s sole and exclusive remedy against the Company shall be for the repair or 
+                            replacement of the defective portion of the warranted Product. The buyer agrees that no other remedy or liability 
+                            (including, but not limited to, indirect, special, punitive, loss of use, business, profits, sales, injury to person 
+                            or property, or any other incidental or consequential loss or damages) shall be available to the Buyer and is hereby 
+                            deemed to be expressly waived and excluded. The maximum liability of the Company in any circumstances, shall not exceed 
+                            the invoice value of the Product. All costs with respect to dismantling, installation, reinstallation, transportation 
+                            shall be solely on account of Buyer and the Company shall not be responsible for the same.
+                        </p>
+                        
+                        <div className="d-flex flex-row align-items-center header">
+                            <h5>Claims:</h5>
+                            <div className="divider"></div>
+                        </div>
+                        <p>
+                            In the event of any claim under this limited warranty, Buyer must demonstrate to the Company’s satisfaction that 
+                            the failure was due to a breach of this limited warranty. Buyer has the responsibility to provide written notice 
+                            containing particulars sufficient to identify the Buyer and all reasonably obtainable information with respect to 
+                            the time, place and circumstance, including a video and/or photographs of the claimed Perforation due to any 
+                            manufacturing defects for the Company’s inspection. Such records shall at a minimum include the date of purchase, 
+                            the place of purchase, dealer / distributor details and the invoice or any other information reasonably required by 
+                            the Company. The Buyer will arrange for the Company or any agency appointed by the Company to have, during normal 
+                            business hours, complete access to the Product and shall be responsible to make available the Product for inspection 
+                            or survey to determine the actual root cause of Perforation. The Buyer shall further provide access to the Company to 
+                            any information and personnel having knowledge of or information pertaining to the claims under this Limited Warranty. 
+                            It is a primary condition to any obligation of the Company under this limited warranty that the Buyer shall have fully 
+                            paid the agreed contract price and invoice value including tax for the Product sold by the Company to Buyer. Subject to 
+                            strict compliance of the above conditions, the Company shall repair or replace the Product within Ninety (90) days of 
+                            receiving all information, documents from the Buyer and inspection of Product to determine root cause is completed by 
+                            the Company. In the event of any repair or replacement by the Company of the Product, the warranty shall stand 
+                            extinguished and cancelled. The decision of the Company shall be final and binding on the Buyer.
+                        </p>
+
                     </div>
+                    
+                    <div className="content-area-4 colored-border">
+                        <div className="d-flex flex-row  align-items-center header">
+                            <h5>Entire understanding:</h5>
+                            <div className="divider"></div>
+                        </div>
+                        <p>
+                            Any and all representations, promises, warranties or statements by the Company’s agents or personnel that varies, 
+                            conflicts, contradicts or inconsistent in any way from the terms of written limited warranty stipulated hereunder, 
+                            shall be given no force or effect and shall be deemed null and void. Any such representations, promises, warranties 
+                            or statements do not constitute warranties, shall not be relied upon by the buyer and are not part of this limited 
+                            warranty or of the contract for sale of the Product between the Company and buyer. This limited warranty shall be 
+                            deemed to be a part of the contract of sale between the Company and buyer for the Product sold by the Company to the 
+                            buyer. The entire agreement and understanding between the Company and the buyer with respect to Product is embodied 
+                            in this writing. This writing constitutes the final expression of the parties’ agreement with respect to warranties 
+                            and is a complete and exclusive statement of the terms of that agreement.
+                        </p>
+
+                        <div className="d-flex flex-row  align-items-center header">
+                            <h5>Warranty not transferable:</h5>
+                            <div className="divider"></div>
+                        </div>
+                        <p>
+                            This Limited Warranty is issued only to the original Buyer and is nontransferable and/or non-assignable. 
+                            Should the Buyer become insolvent, bankrupt, make an assignment for the benefit of its creditors, or for 
+                            any reason discontinue its normal or regular business practices, this warranty shall forthwith become null 
+                            and void and have no legal effect.
+                        </p>
+
+                        <div className="d-flex flex-row  align-items-center header">
+                            <h5>Non waiver:</h5>
+                            <div className="divider"></div>
+                        </div>
+                        <p>
+                            In any instance or series of instances, the determination of the Company not to exercise any right hereunder or 
+                            not to require compliance with any term or condition hereof, shall not constitute a waiver of the Company’s rights 
+                            to exercise all rights and to require compliance with all terms and conditions herein on all occasions prior and 
+                            subsequent to such instance or instances, and no such determination or Series of determinations by the Company 
+                            shall constitute an alteration or waiver of the rights of the Company and Buyer as otherwise set forth herein.
+                        </p>
+
+                        <div className="d-flex flex-row  align-items-center header">
+                            <h5>Governing law and jurisdiction:</h5>
+                            <div className="divider"></div>
+                        </div>
+                        <p>
+                            The rights and obligations of the Company and Buyer hereunder shall be construed and governed by the laws of India, 
+                            without giving effect to conflict of law principles and the Parties agree to submit to the exclusive jurisdiction 
+                            of the appropriate courts at Guwahati, Assam(India).
+                        </p>
+                        
+                    </div>
+
+                    <div className="d-flex flex-row justify-content-center" style={{marginBottom:'30px'}}>
+                        <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    </div>
+                    
                 </div>
             </div>  
         </>
