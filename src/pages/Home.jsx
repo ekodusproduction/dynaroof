@@ -24,8 +24,8 @@ const Home = () => {
   const [getPhone, setPhone] = useState('');
   const [getTimerCount, setTimerCount] = useState(120);
 
-  const base_url = 'http://127.0.0.1:8000';
-  // const base_url = 'https://wa-backend.dynaroof.com';
+  // const base_url = 'http://127.0.0.1:8000';
+  const base_url = 'https://wa-backend.dynaroof.com';
   
 
   const getCountry = (event) => {
@@ -229,6 +229,8 @@ const Home = () => {
                 icon:'success',
                 showCloseButton: true,
               })
+
+              window.location.reload(true);
             }
         });
       }else{
